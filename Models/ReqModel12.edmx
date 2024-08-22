@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BusinessDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BusinessInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Business_Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Business_Category" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Business_SubCategory" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Business_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Owner_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="H_No" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Street" Type="varchar" MaxLength="200" />
+          <Property Name="Area" Type="varchar" MaxLength="200" />
+          <Property Name="Landmark" Type="varchar" MaxLength="200" />
+          <Property Name="Pincode" Type="varchar" MaxLength="10" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="PAN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GST_Number" Type="varchar" MaxLength="50" />
+          <Property Name="CIN" Type="varchar" MaxLength="50" />
+          <Property Name="Billing_Address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Billing_Label" Type="varchar" MaxLength="200" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Alternate_Email" Type="varchar" MaxLength="200" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Alternate_Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="Authorized_Signature" Type="varchar" MaxLength="200" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <Function Name="sp_InsertBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Business_Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="Business_Category" Type="nvarchar" Mode="In" />
+          <Parameter Name="Business_SubCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="Business_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="H_No" Type="nvarchar" Mode="In" />
+          <Parameter Name="Street" Type="nvarchar" Mode="In" />
+          <Parameter Name="Area" Type="nvarchar" Mode="In" />
+          <Parameter Name="Landmark" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="State" Type="nvarchar" Mode="In" />
+          <Parameter Name="PAN" Type="nvarchar" Mode="In" />
+          <Parameter Name="GST_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="CIN" Type="nvarchar" Mode="In" />
+          <Parameter Name="Billing_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Billing_Label" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Alternate_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mobile_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="Alternate_Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Authorized_Signature" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="text" Mode="In" />
+        </Function>
+        <EntityContainer Name="BusinessDatabaseModelStoreContainer">
+          <EntitySet Name="BusinessInformation" EntityType="Self.BusinessInformation" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BusinessDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BusinessInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Business_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Business_Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Business_SubCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Business_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Owner_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="H_No" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Landmark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GST_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Billing_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Billing_Label" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Alternate_Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Alternate_Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Authorized_Signature" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BusinessDatabaseEntities15" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BusinessInformation" EntityType="Self.BusinessInformation" />
+          <FunctionImport Name="sp_InsertBusiness">
+            <Parameter Name="Business_Type" Mode="In" Type="String" />
+            <Parameter Name="Business_Category" Mode="In" Type="String" />
+            <Parameter Name="Business_SubCategory" Mode="In" Type="String" />
+            <Parameter Name="Business_Name" Mode="In" Type="String" />
+            <Parameter Name="Owner_Name" Mode="In" Type="String" />
+            <Parameter Name="H_No" Mode="In" Type="String" />
+            <Parameter Name="Street" Mode="In" Type="String" />
+            <Parameter Name="Area" Mode="In" Type="String" />
+            <Parameter Name="Landmark" Mode="In" Type="String" />
+            <Parameter Name="Pincode" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="State" Mode="In" Type="String" />
+            <Parameter Name="PAN" Mode="In" Type="String" />
+            <Parameter Name="GST_Number" Mode="In" Type="String" />
+            <Parameter Name="CIN" Mode="In" Type="String" />
+            <Parameter Name="Billing_Address" Mode="In" Type="String" />
+            <Parameter Name="Billing_Label" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Alternate_Email" Mode="In" Type="String" />
+            <Parameter Name="Mobile_Number" Mode="In" Type="String" />
+            <Parameter Name="Alternate_Mobile" Mode="In" Type="String" />
+            <Parameter Name="Authorized_Signature" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BusinessDatabaseModelStoreContainer" CdmEntityContainer="BusinessDatabaseEntities15">
+          <EntitySetMapping Name="BusinessInformation">
+            <EntityTypeMapping TypeName="BusinessDatabaseModel.BusinessInformation">
+              <MappingFragment StoreEntitySet="BusinessInformation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Business_Type" ColumnName="Business_Type" />
+                <ScalarProperty Name="Business_Category" ColumnName="Business_Category" />
+                <ScalarProperty Name="Business_SubCategory" ColumnName="Business_SubCategory" />
+                <ScalarProperty Name="Business_Name" ColumnName="Business_Name" />
+                <ScalarProperty Name="Owner_Name" ColumnName="Owner_Name" />
+                <ScalarProperty Name="H_No" ColumnName="H_No" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PAN" ColumnName="PAN" />
+                <ScalarProperty Name="GST_Number" ColumnName="GST_Number" />
+                <ScalarProperty Name="CIN" ColumnName="CIN" />
+                <ScalarProperty Name="Billing_Address" ColumnName="Billing_Address" />
+                <ScalarProperty Name="Billing_Label" ColumnName="Billing_Label" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Alternate_Email" ColumnName="Alternate_Email" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Alternate_Mobile" ColumnName="Alternate_Mobile" />
+                <ScalarProperty Name="Authorized_Signature" ColumnName="Authorized_Signature" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_InsertBusiness" FunctionName="BusinessDatabaseModel.Store.sp_InsertBusiness" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
